@@ -7,10 +7,10 @@ import java.util.LinkedList;
 
 public class LinkedListSorterTest {
 
-	LinkedListSorter sorter;
+    LinkedListSorter sorter;
     LinkedList<Integer> list;
 
-	@Before public void initialize() {
+    @Before public void initialize() {
         sorter = new LinkedListSorter();
         list = new LinkedList<Integer>();
         list.add(7);
@@ -39,7 +39,7 @@ public class LinkedListSorterTest {
     }
 
     @Test public void testPutEvenIndexesToBack() {
-    	LinkedList<Integer> sortedList = sorter.putEvenIndexesToBack(list);
+        LinkedList<Integer> sortedList = sorter.putEvenIndexesToBack(list);
         assertEquals((int) 3, (int) sortedList.get(0));
         assertEquals((int) 10, (int) sortedList.get(1));
         assertEquals((int) 7, (int) sortedList.get(2));
