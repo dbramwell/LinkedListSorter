@@ -5,9 +5,9 @@ import java.util.ListIterator;
 
 public class LinkedListSorter {
 
-	private LinkedList sortBasedOnElement(LinkedList list, Boolean oddToBack) {
+	private LinkedList<Integer> sortBasedOnElement(LinkedList<Integer> list, Boolean oddToBack) {
 		ListIterator<Integer> listIterator = list.listIterator();
-    	LinkedList sortedLinkedList = (LinkedList) list.clone();
+    	LinkedList<Integer> sortedLinkedList = new LinkedList<Integer>(list);
     	while (listIterator.hasNext()) {
 			Integer next = (Integer) listIterator.next();
 			if ((next % 2 == 0 && !oddToBack) || (next % 2 != 0 && oddToBack)) {
@@ -18,11 +18,11 @@ public class LinkedListSorter {
         return sortedLinkedList;
 	}
 
-    public LinkedList putEvenNumbersToBack(LinkedList list) {
+    public LinkedList<Integer> putEvenNumbersToBack(LinkedList<Integer> list) {
     	return sortBasedOnElement(list, false);
     }
 
-    public LinkedList putOddNumbersToBack(LinkedList list) {
+    public LinkedList<Integer> putOddNumbersToBack(LinkedList<Integer> list) {
     	return sortBasedOnElement(list, true);
     }
 }

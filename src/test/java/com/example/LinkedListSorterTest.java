@@ -8,7 +8,7 @@ public class LinkedListSorterTest {
 
     @Test public void testPutEvenNumbersToBack() {
         LinkedListSorter sorter = new LinkedListSorter();
-        LinkedList list = new LinkedList<Integer>();
+        LinkedList<Integer> list = new LinkedList<Integer>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -24,7 +24,7 @@ public class LinkedListSorterTest {
 
     @Test public void testPutOddNumbersToBack() {
         LinkedListSorter sorter = new LinkedListSorter();
-        LinkedList list = new LinkedList<Integer>();
+        LinkedList<Integer> list = new LinkedList<Integer>();
         list.add(1);
         list.add(2);
         list.add(3);
