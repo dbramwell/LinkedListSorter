@@ -13,28 +13,46 @@ public class LinkedListSorterTest {
 	@Before public void initialize() {
         sorter = new LinkedListSorter();
         list = new LinkedList<Integer>();
-        list.add(1);
-        list.add(2);
+        list.add(7);
         list.add(3);
-        list.add(4);
-        list.add(5);
+        list.add(8);
+        list.add(10);
+        list.add(1);
     }
 
     @Test public void testPutEvenNumbersToBack() {
         LinkedList<Integer> sortedList = sorter.putEvenNumbersToBack(list);
-        assertEquals((int) 1, (int) sortedList.get(0));
+        assertEquals((int) 7, (int) sortedList.get(0));
         assertEquals((int) 3, (int) sortedList.get(1));
-        assertEquals((int) 5, (int) sortedList.get(2));
-        assertEquals((int) 2, (int) sortedList.get(3));
-        assertEquals((int) 4, (int) sortedList.get(4));
+        assertEquals((int) 1, (int) sortedList.get(2));
+        assertEquals((int) 8, (int) sortedList.get(3));
+        assertEquals((int) 10, (int) sortedList.get(4));
     }
 
     @Test public void testPutOddNumbersToBack() {
         LinkedList<Integer> sortedList = sorter.putOddNumbersToBack(list);
-        assertEquals((int) 2, (int) sortedList.get(0));
-        assertEquals((int) 4, (int) sortedList.get(1));
+        assertEquals((int) 8, (int) sortedList.get(0));
+        assertEquals((int) 10, (int) sortedList.get(1));
+        assertEquals((int) 7, (int) sortedList.get(2));
+        assertEquals((int) 3, (int) sortedList.get(3));
+        assertEquals((int) 1, (int) sortedList.get(4));
+    }
+
+    @Test public void testPutEvenIndexesToBack() {
+    	LinkedList<Integer> sortedList = sorter.putEvenIndexesToBack(list);
+        assertEquals((int) 3, (int) sortedList.get(0));
+        assertEquals((int) 10, (int) sortedList.get(1));
+        assertEquals((int) 7, (int) sortedList.get(2));
+        assertEquals((int) 8, (int) sortedList.get(3));
+        assertEquals((int) 1, (int) sortedList.get(4));
+    }
+
+    @Test public void testPutOddIndexesToBack() {
+        LinkedList<Integer> sortedList = sorter.putOddIndexesToBack(list);
+        assertEquals((int) 7, (int) sortedList.get(0));
+        assertEquals((int) 8, (int) sortedList.get(1));
         assertEquals((int) 1, (int) sortedList.get(2));
         assertEquals((int) 3, (int) sortedList.get(3));
-        assertEquals((int) 5, (int) sortedList.get(4));
+        assertEquals((int) 10, (int) sortedList.get(4));
     }
 }
